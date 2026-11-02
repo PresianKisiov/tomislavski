@@ -2,5 +2,7 @@
   "name": "Томислав - Официален Пародиен Сайт",
   "description": "Ексклузивен пародиен сайт на легендата Томислав: постижения, аура калкулатор, галерия и комични бутони.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

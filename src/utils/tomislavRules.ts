@@ -126,10 +126,6 @@ export function getRespectTier(clicks: number): { title: string; perk: string; l
 }
 
 export function evaluateTomislavQuiz(answers: number[]): { title: string; percentage: number; comment: string } {
-  // Correct answers: [0, 1, 0]
-  // 1: "Налива още една чаша и вдига наздравица" (idx 0)
-  // 2: "Бяла риза с тексаска боло-вратовръзка" (idx 1)
-  // 3: "С дипломатичен жест и широка усмивка" (idx 0)
   let correct = 0;
   if (answers[0] === 0) correct++;
   if (answers[1] === 1) correct++;
@@ -157,3 +153,56 @@ export function evaluateTomislavQuiz(answers: number[]): { title: string; percen
     };
   }
 }
+
+export interface MiniGameScoreResult {
+  score: number;
+  rank: string;
+  bottlesCollected: number;
+  achievedTitle: string;
+}
+
+export function evaluateMiniGameScore(score: number, bottles: number): MiniGameScoreResult {
+  if (score >= 500) {
+    return {
+      score,
+      bottlesCollected: bottles,
+      rank: 'БОГ НА BLACK RAM',
+      achievedTitle: 'Томислав лично ти отстъпва мястото си пред камината!',
+    };
+  } else if (score >= 250) {
+    return {
+      score,
+      bottlesCollected: bottles,
+      rank: 'ОФИЦИАЛЕН БАРМАН НА ВИЛАТА',
+      achievedTitle: 'Сръчност от класа! Нито една капка не отиде на пода.',
+    };
+  } else if (score >= 100) {
+    return {
+      score,
+      bottlesCollected: bottles,
+      rank: 'КВАРТАЛЕН ЛОПАЙНИК',
+      achievedTitle: 'Добре хващаш бутилките, но ти трябват още тренировки.',
+    };
+  } else {
+    return {
+      score: Math.max(score, 0),
+      bottlesCollected: bottles,
+      rank: 'ТРЕЗВЕНИК В ШОК',
+      achievedTitle: 'Изпусна твърде много Black Ram! Томи те гледа с укор.',
+    };
+  }
+}
+
+export function generateEmergencyExcuse(situation: 'late' | 'no_money' | 'missed_call' | 'party_excuse'): string {
+  switch (situation) {
+    case 'late':
+      return '„Брат, тръгнах преди 4 часа, ама по пътя срещнах Томислав. Спря ме до камината да ми обясни тайната на Вселената и ми наля Black Ram. Нямаше как да откажа от уважение!“';
+    case 'no_money':
+      return '„Точно щях да ти преведа парите, но Томислав ме убеди, че парите са илюзия на материалния свят, а истинското богатство са спомените край огнището.“';
+    case 'missed_call':
+      return '„Не чух телефона, защото Томислав се смееше толкова гръмогласно до мен, че заглуши всички мобилни оператори на Балканите.“';
+    case 'party_excuse':
+      return '„Не мога да дойда на вашата скучна среща, защото съм официален гост на банкета на Томислав. Дрес кодът е бяла риза с боло-вратовръзка.“';
+  }
+}
+

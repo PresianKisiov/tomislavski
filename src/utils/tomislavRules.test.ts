@@ -4,6 +4,8 @@ import {
   calculateTomislavAura,
   getRespectTier,
   evaluateTomislavQuiz,
+  evaluateMiniGameScore,
+  generateEmergencyExcuse,
 } from './tomislavRules';
 
 test('calculateTomislavAura awards maximum aura for Black Ram and fireplace proximity', () => {
@@ -58,3 +60,24 @@ test('evaluateTomislavQuiz returns perfect score for correct answers', () => {
   assert.equal(failed.percentage, 0);
   assert.equal(failed.title, 'СЛУЧАЕН МИНУВАЧ');
 });
+
+test('evaluateMiniGameScore assigns appropriate ranks based on score', () => {
+  const god = evaluateMiniGameScore(600, 6);
+  assert.equal(god.rank, 'БОГ НА BLACK RAM');
+
+  const bartender = evaluateMiniGameScore(300, 3);
+  assert.equal(bartender.rank, 'ОФИЦИАЛЕН БАРМАН НА ВИЛАТА');
+
+  const low = evaluateMiniGameScore(40, 0);
+  assert.equal(low.rank, 'ТРЕЗВЕНИК В ШОК');
+});
+
+test('generateEmergencyExcuse returns witty Bulgarian phrases for all cases', () => {
+  const late = generateEmergencyExcuse('late');
+  assert.ok(late.includes('Томислав'));
+  assert.ok(late.includes('Black Ram'));
+
+  const money = generateEmergencyExcuse('no_money');
+  assert.ok(money.includes('парите'));
+});
+

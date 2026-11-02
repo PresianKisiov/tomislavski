@@ -1,3 +1,10 @@
+export interface MemePreset {
+  id: string;
+  isOld: boolean;
+  top: string;
+  bottom: string;
+}
+
 export interface TomiPhoto {
   id: string;
   url: string;
@@ -7,6 +14,7 @@ export interface TomiPhoto {
   auraBonus: number;
   description: string;
   achievementId: string;
+  memes: MemePreset[];
 }
 
 export const TOMISLAV_PHOTOS: TomiPhoto[] = [
@@ -19,6 +27,14 @@ export const TOMISLAV_PHOTOS: TomiPhoto[] = [
     auraBonus: 15000,
     description: 'Световният сомелиер Томислав представя лимитираната селекция до огнището. Една глътка за душата, една за джакузито на духа.',
     achievementId: 'ach_sommelier',
+    memes: [
+      { id: 'br_old_1', isOld: true, top: 'ВИНЕТКА? НЕ СЪМ ЧУВАЛ', bottom: 'АЗ СЪМ С BLACK RAM В РЪКАТА' },
+      { id: 'br_old_2', isOld: true, top: 'КОГАТО РАЗБЕРЕШ, ЧЕ', bottom: 'BLACK RAM-ЪТ Е НА ПРОМОЦИЯ' },
+      { id: 'br_new_1', isOld: false, top: 'ЕДНО УИСКИ НА ДЕН', bottom: 'ДЪРЖИ ЛЕКАРЯ И ДЪЛГОВЕТЕ ДАЛЕЧ' },
+      { id: 'br_new_2', isOld: false, top: 'ЛЕГЕНДАТА РАЗКАЗВА, ЧЕ', bottom: 'ТАЗИ БУТИЛКА СЕ ПРЕДАВА В РОДА ПО НАСЛЕДСТВО' },
+      { id: 'br_new_3', isOld: false, top: 'НА ТОВА МУ СЕ ВИКА', bottom: 'ФИНАНСОВА НЕЗАВИСИМОСТ КРАЙ КАМИНАТА' },
+      { id: 'br_new_4', isOld: false, top: 'НЕ ПИЯ ЧЕСТО, АМА КОГАТО ПИЯ', bottom: 'ОГЪНЯТ ПЪРВИ МИ ВИКА „НАЗДРАВЕ!“' },
+    ],
   },
   {
     id: 'diplomat-gesture',
@@ -29,6 +45,14 @@ export const TOMISLAV_PHOTOS: TomiPhoto[] = [
     auraBonus: 9999,
     description: 'Еднозначен международен поздрав с безупречна стойка пред пламтящата камина. Символ на непримиримост и вътрешен мир.',
     achievementId: 'ach_diplomat',
+    memes: [
+      { id: 'dip_old_1', isOld: true, top: 'МИРОТВОРЕЦЪТ ТОМИСЛАВ', bottom: 'ИЗПРАЩА ПОЗДРАВИ НА КОНКУРЕНЦИЯТА' },
+      { id: 'dip_old_2', isOld: true, top: 'КРАТКИЯТ И ЯСЕН ОТГОВОР', bottom: 'КЪМ ВСИЧКИ ХЕЙТЪРИ' },
+      { id: 'dip_new_1', isOld: false, top: 'КОГАТО ТЕ ПИТАТ:', bottom: '„НЯМА ЛИ ДА СИ ВЪРНЕШ 20-ТЕ ЛЕВА?“' },
+      { id: 'dip_new_2', isOld: false, top: 'ОФИЦИАЛНО СТАНОВИЩЕ', bottom: 'ОТНОСНО СТАВАНЕТО РАНО В ПОНЕДЕЛНИК' },
+      { id: 'dip_new_3', isOld: false, top: 'ТЕМПЕРАТУРАТА НАВЪН: -5°C', bottom: 'МОЯТ ВЪТРЕШЕН МИР: ТОЧНО ТУК' },
+      { id: 'dip_new_4', isOld: false, top: 'ДИПЛОМАЦИЯТА Е В ПРЪСТА', bottom: 'И ТОЗИ ПРЪСТ НЕ Е ПОКАЗАЛЕЦЪТ' },
+    ],
   },
   {
     id: 'bolo-tie-model',
@@ -39,6 +63,14 @@ export const TOMISLAV_PHOTOS: TomiPhoto[] = [
     auraBonus: 12000,
     description: 'Бяла риза с надписи на английски, метална боло-вратовръзка с емблема и 100% честна българска усмивка.',
     achievementId: 'ach_gentleman',
+    memes: [
+      { id: 'bolo_old_1', isOld: true, top: 'КОГАТО ОТИДЕШ НА СВАТБА', bottom: 'И СИ ПО-ЕЛЕГАНТЕН ОТ МЛАДОЖЕНЕЦА' },
+      { id: 'bolo_old_2', isOld: true, top: 'ЗЕТЯТ МЕЧТА', bottom: 'ГОТОВ ЗА ЗАПОЗНАНСТВО С РОДАТА' },
+      { id: 'bolo_new_1', isOld: false, top: 'ЗАВЪРШИХ 12-ТИ КЛАС С 3.50', bottom: 'АМА ГЛЕДАЙ К’ВА ВРАТОВРЪЗКА ИМАМ!' },
+      { id: 'bolo_new_2', isOld: false, top: '100% ЧИСТ ТЕКСАСКИ ШИК', bottom: 'ДИРЕКТНО ОТ СЪБОТНИЯ ПАЗАР' },
+      { id: 'bolo_new_3', isOld: false, top: 'КОГАТО МАМА КАЖЕ:', bottom: '„ГОЛЯМО И КРАСИВО МОМЧЕ СИ МИ ТИ!“' },
+      { id: 'bolo_new_4', isOld: false, top: 'ПЪРВИЯТ МЪЖ В РОДАТА', bottom: 'С МЕТАЛНА ПЛОЧКА ВМЕСТО ВРАТОВРЪЗКА' },
+    ],
   },
   {
     id: 'passport-face',
@@ -47,8 +79,16 @@ export const TOMISLAV_PHOTOS: TomiPhoto[] = [
     tagline: '„Когато баба ти каже, че не си надебелял достатъчно.“',
     category: 'паспорт',
     auraBonus: 18000,
-    description: 'Уникална мимика от висш пилотаж. Устните се прибират в алтернативно измерение, очите пронизват събеседника.',
+    description: 'Уникална мимика от висш пилотаж. Устните се прибират в алтернативно измерение, очите пронизват събесреника.',
     achievementId: 'ach_passport',
+    memes: [
+      { id: 'pass_old_1', isOld: true, top: 'КОГАТО ТЕ ПИТАТ', bottom: 'КЪДЕ ОТИДОХА ПАРИТЕ ЗА СМЕТКИТЕ' },
+      { id: 'pass_old_2', isOld: true, top: 'КОГАТО БАБА ТИ КАЖЕ', bottom: 'ЧЕ НЕ СИ НАДЕБЕЛЯЛ ДОСТАТЪЧНО' },
+      { id: 'pass_new_1', isOld: false, top: 'КОГАТО СНИМКАТА ЗА ПАСПОРТ', bottom: 'СТАНЕ ПО-СТРАШНА ОТ СЪОБЩЕНИЕ ОТ НАП' },
+      { id: 'pass_new_2', isOld: false, top: 'НЕ СЪМ СЪРДИТ', bottom: 'ПРОСТО ТАКА РЕСТАРТИРАМ МОЗЪКА СИ' },
+      { id: 'pass_new_3', isOld: false, top: 'КОГАТО СРЕЩНЕШ БИВШАТА', bottom: 'И СЕ ПРАВИШ НА СЛУЧАЕН МИНУВАЧ' },
+      { id: 'pass_new_4', isOld: false, top: 'ГЪЛТАМ СИ ДУМИТЕ', bottom: 'ЗА ДА НЕ ПРЕВЪРТЯ КВАРТАЛА' },
+    ],
   },
   {
     id: 'super-laugh',
@@ -59,6 +99,13 @@ export const TOMISLAV_PHOTOS: TomiPhoto[] = [
     auraBonus: 8888,
     description: 'Чист, неподправен смях, който може да угаси и разпали отново дървата в камината едновременно.',
     achievementId: 'ach_laugh',
+    memes: [
+      { id: 'laugh_old_1', isOld: true, top: 'ХА-ХА-ХА!', bottom: 'КАЗАХА МИ, ЧЕ УТРЕ Е ПОНЕДЕЛНИК' },
+      { id: 'laugh_new_1', isOld: false, top: 'ТОЙ: „АЗ ПОВЕЧЕ ОТ ЕДНА НЕ ПИЯ!“', bottom: 'СЪЩИЯТ ЧОВЕК СЛЕД 10 МИНУТИ:' },
+      { id: 'laugh_new_2', isOld: false, top: 'КОГАТО КАЖАТ, ЧЕ BLACK RAM Е СВЪРШИЛ', bottom: 'АМА ТИ СИ СКРИЛ ОЩЕ ДВЕ В КУХНЯТА' },
+      { id: 'laugh_new_3', isOld: false, top: 'СМЕЯ СЕ, ЗА ДА НЕ ПЛАЧА', bottom: 'ОТ ЦЕНАТА НА ДЪРВАТА ЗА ОГРЕВ' },
+      { id: 'laugh_new_4', isOld: false, top: 'ХАХАХА! КАЗАХА МИ', bottom: 'ЧЕ ИМАЛО ПО-КРАСИВ ОТ МЕН В КВАРТАЛА' },
+    ],
   },
   {
     id: 'fire-hunter',
@@ -69,6 +116,13 @@ export const TOMISLAV_PHOTOS: TomiPhoto[] = [
     auraBonus: 7777,
     description: 'Поглед, концентриран на 110%. Готовност да скочи при първото изпукване на борова цепеница.',
     achievementId: 'ach_hunter',
+    memes: [
+      { id: 'hunt_old_1', isOld: true, top: 'ВИЖДАМ ПЪРЖОЛАТА', bottom: 'ДЕБНА ПЪРЖОЛАТА. АЗ СЪМ ПЪРЖОЛАТА.' },
+      { id: 'hunt_new_1', isOld: false, top: 'КОГАТО ЧУЕШ, ЧЕ НЯКОЙ СИ СИПВА', bottom: 'БЕЗ ДА ТИ ВДИГНЕ НАЗДРАВИЦА' },
+      { id: 'hunt_new_2', isOld: false, top: 'ТЕРМИНАТОР: СЪДНИЯТ ДЕН', bottom: 'НО ДЕЙСТВИЕТО СЕ РАЗВИВА В МЕХАНАТА' },
+      { id: 'hunt_new_3', isOld: false, top: 'ПОГЛЕДЪТ НА ХИЩНИК', bottom: 'ПРЕДИ ДА НАПАДНЕ КЕБАПЧЕТАТА НА ЖАР' },
+      { id: 'hunt_new_4', isOld: false, top: 'СЛЕДЯ ТЕ МНОГО ВНИМАТЕЛНО', bottom: 'ДА НЕ БИ ДА РАЗРЕЖЕШ САЛАТАТА ГРЕШНО' },
+    ],
   },
   {
     id: 'model-neck-scratch',
@@ -79,6 +133,13 @@ export const TOMISLAV_PHOTOS: TomiPhoto[] = [
     auraBonus: 9500,
     description: 'Официална поза за каталога на Миланската Седмица на Модата (клон Горна Оряховица).',
     achievementId: 'ach_model',
+    memes: [
+      { id: 'mod_old_1', isOld: true, top: 'НЕ ПОЗИРАМ НАРОЧНО', bottom: 'ПРОСТО ОГЪНЯТ МЕ СТОПЛИ ТАКТИЧЕСКИ' },
+      { id: 'mod_new_1', isOld: false, top: 'ОХ, СХВАНА МИ СЕ ВРАТЪТ...', bottom: 'ОТ ТЕЖЕСТТА НА СОБСТВЕНОТО МИ ЕГО' },
+      { id: 'mod_new_2', isOld: false, top: 'ТОП МОДЕЛ НА ГОДИНАТА', bottom: 'КАТЕГОРИЯ: „СТОПЛЕН КРАЙ КАМИНАТА“' },
+      { id: 'mod_new_3', isOld: false, top: 'КОГАТО ОСЪЗНАЕШ, ЧЕ СИ', bottom: 'НАЙ-СЕКСАПИЛНИЯТ ДЪРВАР НА БАЛКАНИТЕ' },
+      { id: 'mod_new_4', isOld: false, top: 'ОТ ТАЗИ ПОЗА СЕ ВИЖДА', bottom: 'ЧИСТАТА МИ ХАРИЗМА В ПРОФИЛ' },
+    ],
   },
   {
     id: 'deep-thinker',
@@ -89,8 +150,16 @@ export const TOMISLAV_PHOTOS: TomiPhoto[] = [
     auraBonus: 8200,
     description: 'Седнал на дървен стол, поглед забит в пода, пресмятащ сложни уравнения за смисъла на битието и цената на нафтата.',
     achievementId: 'ach_thinker',
+    memes: [
+      { id: 'think_old_1', isOld: true, top: 'АКО НЕ ОТИДА НА РАБОТА', bottom: 'ДАЛИ РАБОТАТА ЩЕ ДОЙДЕ ПРИ МЕН?' },
+      { id: 'think_new_1', isOld: false, top: 'МИСЛИТЕЛЯТ ОТ ЛЮЛИН', bottom: 'РАЗСЪЖДАВА ВЪРХУ ТЕЖКИТЕ КВАРТАЛНИ ТЕМИ' },
+      { id: 'think_new_2', isOld: false, top: 'ЗАЩО СВЕТЪТ Е ТОЛКОВА СЛОЖЕН', bottom: 'А БИРАТА СВЪРШВА ТОЛКОВА БЪРЗО?' },
+      { id: 'think_new_3', isOld: false, top: 'СЕДЯ И СИ МИСЛЯ:', bottom: '„ДАЛИ ДА СИ СИПЯ BLACK RAM ИЛИ BLACK RAM?“' },
+      { id: 'think_new_4', isOld: false, top: 'ВЪТРЕШНИЯТ МИ ГЛАС:', bottom: '„ТОМИ, ТИ СИ СЪЗДАДЕН ЗА ВЕЛИКИ ДЕЛА“' },
+    ],
   },
 ];
+
 
 export interface TomiAchievement {
   id: string;
